@@ -28,6 +28,9 @@ RUN --mount=type=bind,source=package.json,target=package.json \
 # Install Express for the application
 RUN npm install -save express
 
+# Install websocket library
+RUN npm install -save socket.io
+
 # Run the application as a non-root user.
 USER node
 
@@ -38,4 +41,4 @@ COPY . .
 EXPOSE 8080
 
 # Run the application.
-CMD ["node", "server.js"]
+CMD ["npm", "run", "start"]
