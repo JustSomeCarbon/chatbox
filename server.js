@@ -16,13 +16,17 @@ app.get("/", (request, response) => {
     response.sendFile(".", "index.html");
 });
 
+
 io.on('connection', (socket) => {
-    console.log("A user connected to the server!");
+    
+    socket.on('chat message', (msg) => {
+      io.emit('chat message', msg);
+    });
 
     socket.on('disconnect', () => {
         console.log("A user disconnected from the server!");
-    })
-});
+    });
+  });
 
 server.listen(port, () => {
     console.log(`Server listening on http://localhost:${port}`);
