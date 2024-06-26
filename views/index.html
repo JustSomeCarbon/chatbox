@@ -7,15 +7,13 @@
     </head>
     <body>
         <H3>ChatBox!</H3>
-        <ul class="messages"></ul>
-        <form action="post">
-            <input type="text" class="input" autocomplete="off" autofocus />
+        <ul class="messages" id="messages"></ul>
+        <form id="form" action="">
+            <input type="text" class="input" id="input" autocomplete="off" autofocus />
             <button>Send</button>
         </form>
 
         <script src="/socket.io/socket.io.js"></script>
-        <!-- <script> const socket = io(); </script> -->
-        <script src="coms.js"></script>
-        <!-- <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script> -->
+        <script type="text/javascript" src="coms.js"></script>
     </body>
 </html>
